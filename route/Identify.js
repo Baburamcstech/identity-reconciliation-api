@@ -7,7 +7,7 @@ router.post("/", (req, res) => {
   const email = req.body.email;
   var EmailArr=[], phoneNumbersArr=[], secondaryContactIds=[];
 
-  const query = `SELECT id, email, phoneNumber, linkedId, linkPrecedence, createdAt FROM Contact WHERE email='${email}' OR phoneNumber=${mobile} ORDER BY createdAt DESC`;
+  const query = `SELECT id, email, phoneNumber, linkedId, linkPrecedence, createdAt FROM Contact WHERE email='${email}' OR phoneNumber=${mobile} ORDER BY createdAt Asc`;
   connection.query(query, (err, results) => {
     if (err) {
       console.log(`Error during fetching data ${err}`);
